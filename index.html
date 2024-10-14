@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="kg">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Бул кеңейтилген CSS практикасы." />
+    <meta
+      name="keywords"
+      content="HTML, CSS, псевдокласс, псевдоэлемент, комбинатор, үй тапшырма"
+    />
+    <meta name="author" content="Сиздин атыңыз" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Кеңейтилген CSS Практикасы</title>
+    <style>
+      /* Бардык абзацтар көк түстө */
+      .p {
+        color: blue;
+        font-family: Arial, sans-serif;
+        line-height: 1.5;
+      }
+
+      /* Контейнер ичиндеги биринчи абзац жашыл түстө */
+      .container > p:first-child {
+        color: green;
+      }
+
+      /* Ар бир элементтин фону башка түстө болушу үчүн */
+      .container > p:nth-child(2) {
+        background-color: lightblue;
+      }
+
+      /* Кошумча абзац - белгилүү бир класстын түсү */
+      .special-paragraph {
+        color: darkorange;
+      }
+
+      /* Тизмедеги бардык элементтердин шрифти чоң жана майда-чүйдө текшерүү */
+      .ul li {
+        font-size: 18px;
+        list-style-type: square;
+      }
+
+      /* Тизмедеги биринчи жана акыркы элементтерге өзүнчө стилдер */
+      .ul li:first-child {
+        font-weight: bold;
+      }
+
+      .ul li:last-child {
+        color: purple;
+        text-transform: uppercase;
+      }
+
+      /* Тизмедеги ар бир экинчи элементти сызып салуу */
+      .ul li:nth-child(2n) {
+        text-decoration: line-through;
+      }
+
+      /* Кнопкага чычканды алып барганда фону жана чек арасы өзгөрөт */
+      .button:hover {
+        background-color: yellow;
+        border: 2px solid black;
+        cursor: pointer;
+      }
+
+      /* Кнопка басылып жатканда фону жашыл болот */
+      .button:active {
+        background-color: green;
+      }
+
+      /* Ар бир абзацтын аягына текст кошобуз */
+      .p::after {
+        content: " (абзацтын аягы)";
+        color: gray;
+        font-style: italic;
+      }
+
+      /* Ар бир абзацтын биринчи тамгасы чоң жана кызыл */
+      .p::first-letter {
+        font-size: 2.5em;
+        color: red;
+        font-weight: bold;
+      }
+
+      /* Контейнер ичиндеги биринчи абзацтын биринчи тамгасы өзгөчө */
+      .container > p:first-child::first-letter {
+        font-size: 3em;
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Кеңейтилген CSS практикасы</h1>
+    <div class="container">
+      <h2>Кошумча тапшырма</h2>
+      <p class="p">Бул абзац тесттик контент үчүн. Бул жерде көп сөздөр бар.</p>
+      <p class="special-paragraph">
+        Бул дагы бир абзац, бирок бул класстын стили башкача болот.
+      </p>
+      <ul class="ul">
+        <li>Тизмедеги биринчи пункт</li>
+        <li>Тизмедеги экинчи пункт</li>
+        <li>Тизмедеги үчүнчү пункт</li>
+      </ul>
+      <button class="button">Баскыч</button>
+    </div>
+    <a href="./kowumcha.html">Кийинки уй тапшырма</a>
+  </body>
+</html>
